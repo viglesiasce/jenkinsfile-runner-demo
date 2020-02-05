@@ -1,0 +1,10 @@
+steps:
+- name: viglesiasce/jfr
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+      wget https://download.docker.com/linux/static/stable/x86_64/docker-19.03.5.tgz
+      tar zxfv docker-19.03.5.tgz
+      cp docker/docker /usr/local/bin
+      /app/bin/jenkinsfile-runner -f /workspace -p /workspace/plugins.txt
